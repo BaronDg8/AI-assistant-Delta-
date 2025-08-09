@@ -1,0 +1,20 @@
+
+Raphael Ai assistant
+    (wake word cortana)
+    1. ai itself working (done)
+    2. manager (done)
+    3. commands (in progress)
+        1. task manager (done)
+        2. screen defaults (done)
+        3. ignore programs (done)
+    4. work on startup 
+    5. can give live notifications about program resource use (done)
+        #: make prints go into a cache log (done)
+    6. can show up as a windows widget 
+    #. TTS 
+
+
+    fixes needed:
+        1. log cache system (done)
+        2. log read system (done)
+        

@@ -1,0 +1,100 @@
+
+OpenAi API key in 1Password
+
+ideas / roadmap / plans:
+
+    1. voice activation sequence plans (ready):
+        1. when AI model and ui for cortana is made make (f = open) run the AIs script and once the ai stop listening rerun this script
+
+    2. Ui display 
+        1. darken the laptops screen and show what you and cortana are saying (done)
+        2. make the ui similar to ChatGPT looks like (done)
+
+    3. Cortana (AI) 
+        1. make it an unsupervised learning models (Ai working)
+        2. can act as task manager and can shut down programs (works)
+        3. can give program resource use details (works)
+        4. tells if a program is using a large amount of resources [ex: 4o% cpu use] = "{program name} is using over 40% of the cpu / gpu (works)
+        5. turns on on startup (acts as a windows program)
+            # needs to be an exe to work
+        6. customizable (Windows customize program)
+        7. see if ChatGPT can teach it (done)
+        8. can work offline to an extent (works)
+
+    4. Windows customize program 
+        1. can customize Ai display
+        2. can change Ai voice 
+        3. can be used to import new Ai models 
+        4. can shut down or turn on cortana (turns on and off the voice activation sequence) (done)
+
+    # last things to do
+        1. Cortana startup animation
+        2. TTS
+        
+
+Notes:
+
+    Websites:
+        
+        1. coding articles:
+            1. https://reintech.io/blog/how-to-create-a-voice-recognition-system-with-python
+        2. youtube:
+            1. has videos talking about LLMs and transformers:
+                # https://www.youtube.com/@3blue1brown/videos
+        3. Ai model ideas
+            1. OpenAi
+                1. error codes 
+                    # https://platform.openai.com/docs/guides/error-codes/api-errors
+
+            2. posable Ai model engines to use for cortana
+                1. Ollama for offline AI (done)
+                    # pip install ollama
+                    # ollama install: https://ollama.com/download/windows
+                    
+                    1. download process
+
+                        1. put [ollama --help] in command prompt
+                        2. Download a Model (ollama pull <model name>)
+                            # ollama pull mistral (done)
+                            # ollama pull llama2 (done)
+
+                2. Mistral AI for online AI
+                    # pip install mistral
+
+                # refer to Ai models list in [C:\Users\iceke\Downloads\visual studio code python] in the file named {Ai models}
+
+
+    function examples
+
+        {} = key word
+        [] = python code
+
+        1.  connecting the voice activation sequence with the text to speech
+            
+            # Import the [text_to_speech_system] module. Make sure this module containing the [speak] function is in the same directory or a location where Python can find it. 
+            
+            # Call [text_to_speech_system.speak()] within the [process_voice_command] function after "cortana" is detected. This will trigger the text-to-speech engine.
+            
+            # Add an explicit [return False] in [process_voice_command] if "cortana" is not found. This makes the logic clearer and avoids the implicit return of [None].
+
+            # Simplify the main loop condition to while True and use a break statement to exit the loop when "cortana" is detected. This makes the loop's purpose more apparent.
+            
+            # This revised code integrates the voice activation with text-to-speech and improves the overall structure and clarity. Remember to install the necessary library for [text_to_speech_system] if you haven't already (e.g., [pip install pyttsx3]).
+
+        2. making one read another
+
+            1. ways to fix communication with other files
+                #  Relative Path: The hardcoded absolute path is replaced with a relative path ["./Ai display aka Ai ui test.py".] This assumes the target script is in the same directory. Adjust if needed. This makes the code more portable.
+
+                # Script Execution: The code now reads the contents of the file using [f.read()] and executes it [using exec().] This runs the AI script.
+
+                # Error Handling: A {try-except block} is added to handle potential [FileNotFoundError] and other exceptions during file operations and script execution. This makes the code more robust.
+
+            2. improvements to consider
+                # Clearer Variable Names: Rename file to something more descriptive, like [ai_script_path] or [ai_script_file].
+
+                # Subprocess: For more complex interactions or if the AI script needs to run independently, use the {subprocess} module instead of {exec}. This is generally safer and more flexible.
+
+                # Logging: Implement logging to capture errors and other relevant information for debugging and monitoring.
+                
+                # Configuration: Store the script path in a configuration file or environment variable for even more flexibility.
